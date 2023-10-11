@@ -1,0 +1,88 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const courseType = 'short online course';
+const courseObjectives = 'provide foundational knowledge about voice-over work';
+const subjectOrTopic = 'Voice-over';
+const courseOutcomeOrGoal = 'performing automated voice-over work';
+const professionOrAcademic = 'content creator'
+
+const transcript = `
+Good day everyone and welcome to ${SITE_TITLE}!
+
+This comprehensive and engaging ${courseType} is designed to ${courseObjectives}. 
+
+This course is tailored to provide you with a deep understanding of ${subjectOrTopic}, equipping you with the knowledge and skills necessary for ${courseOutcomeOrGoal}. 
+
+Whether you're a beginner looking to explore a new field or an experienced ${professionOrAcademic}, this course will challenge and inspire you to achieve your professional goals.
+
+The course covers
+Understanding Voice-Over Basics
+Introduction to the fundamentals of voice-over work, including its purpose and applications.
+Exploring Voice Varieties
+Get familiar with different voice styles, tones, and pitches commonly used in voice-over work.
+Script Interpretation
+How to analyze and interpret voice-over scripts, including understanding the target audience and the intended message.
+Characterization
+Explore techniques for creating different characters, personas, and voices.
+Industry Awareness
+Provide insights into the voice-over industry, including opportunities, trends, and career paths.
+Legal and Ethical Considerations
+Discuss legal and ethical considerations related to voice-over work, including contracts, royalties, and copyright issues.
+Professionalism and Work Etiquette:
+Emphasize professionalism, punctuality, and communication skills when working with clients and studios.
+Feedback and Self-Improvement:
+Give and receive constructive feedback on your voice-over performances.
+Promote continuous self-improvement and practice.
+
+Project Work:
+Practical voice-over projects, including commercials, narrations, and character performances.
+Portfolio Development:
+Create a portfolio showcasing your best voice-over work to share with potential clients or employers.
+
+
+Have fun! If you get stuck, we will be happy to help at Storyshell.io
+`;
+
+console.log(transcript);
+console.log(transcript);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<audio controls>
+            <source src="/public/overview.mp3" type="audio/mpeg">
+        </audio>    
+		<main>
+			<h1>{SITE_TITLE}</h1>
+			<p>
+				<h4>{SITE_DESCRIPTION}</h4>
+			<ul>
+				<li><h5><a href='/understanding-voiceover-basics'>Understanding Voice-Over Basics</a></h5> Introduction to the fundamentals of voice-over work, including its purpose and applications.</li>
+				<li><h5>Exploring Voice Varieties</h5> Get familiar with different voice styles, tones, and pitches commonly used in voice-over work.</li>
+				<li><h5>Script Interpretation</h5> How to analyze and interpret voice-over scripts, including understanding the target audience and the intended message.</li>
+				<li><h5>Characterization</h5> Explore techniques for creating different characters, personas, and voices.</li>
+				<li><h5>Industry Awareness</h5>	Provide insights into the voice-over industry, including opportunities, trends, and career paths.</li>
+				<li><h5>Legal and Ethical Considerations</h5> Discuss legal and ethical considerations related to voice-over work, including contracts, royalties, and copyright issues.</li>
+				<li><h5>Professionalism and Work Etiquette</h5> Emphasize professionalism, punctuality, and communication skills when working with clients and studios.</li>
+				<li><h5>Feedback and Self-Improvement</h5> Give and receive constructive feedback on your voice-over performances. Embrace continuous self-improvement and practice.</li>
+				<li><h5>Project Work</h5> Practical voice-over projects, including commercials, narrations, and character performances.</li>
+				<li><h5>Portfolio Development</h5> Create a portfolio showcasing your best voice-over work to share with potential clients or employers.</li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
+	<style is:global>
+        audio {
+            position: fixed; bottom: 0; width: 100%; margin: 0; padding: 0;
+        }
+    </style>
+</html>

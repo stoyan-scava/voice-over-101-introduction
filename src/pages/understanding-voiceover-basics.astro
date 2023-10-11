@@ -1,0 +1,120 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const chapterTitle = 'Understanding the fundamentals of voice-over work, including its purpose and applications';
+
+const courseContent = {
+    'Introduction': `Voice-over is a fundamental element in many forms of media, from commercials and video games to audiobooks and animated films. Understanding the basics of voice-over is crucial for anyone interested in pursuing a career in this field or for those simply curious about the art of using the voice to convey a message or character. In this educational material, we'll explore the essentials of voice-over, including what it is, the different types, and some tips for success.`,
+    'What Is Voice-Over?': `Voice-over, often abbreviated as VO, is the process of using one's voice to narrate or provide commentary for various types of media content. It's an essential component of audiovisual storytelling, and it serves several purposes, such as conveying information, enhancing the emotional impact of a story, and giving a voice to animated characters.`,
+    'Types of Voice-Over': {
+        'Commercial Voice-Over': 'In this category, voice-over artists lend their voices to advertisements for products and services. These can be on radio, TV, or online platforms.',
+        'Narration Voice-Over': 'Often used in documentaries, educational videos, and audiobooks, narrators provide information or tell a story through their voices.',
+        'Character Voice-Over': 'This type is prevalent in animated films, video games, and cartoons. Voice actors create distinct voices for characters to bring them to life.',
+        'Dubbing Voice-Over': 'When a film or TV show is originally produced in one language and then dubbed into another, voice-over artists replace the original voices with translations.',
+        'Automated Voice-Over': 'This involves the use of automated text-to-speech technology for various applications, such as customer service hotlines and GPS navigation systems.'
+    },
+    'Voice-Over Basics': {
+        'To excel in voice-over work, consider these fundamental principles': {
+            'Clarity and Diction': 'Clear and articulate speech is essential.',
+            'Tone and Emotion': 'Adjust tone and emotion to match the content.',
+            'Timing and Pacing': `Timing is crucial in voice-over. Be aware of the script's pacing, and ensure that your delivery aligns with the visuals or context.`,
+            'Script Interpretation': `Understand the script's context, audience, and message to deliver a compelling performance.`,
+        }
+    },
+    'Conclusion': 'Voice-over is a versatile and in-demand field with various applications in the entertainment, advertising, and educational industries. By mastering the basics of voice-over, you can become a valuable asset in bringing stories and messages to life through the power of your voice. With practice, dedication, and a passion for storytelling, you can embark on a rewarding journey in the world of voice-over.'
+}
+
+
+const transcript = `
+Good day everyone and welcome to ${SITE_TITLE}!
+
+This first chapter is about ${chapterTitle}. 
+
+${courseContent['Introduction']}
+
+What Is Voice-Over? ${courseContent['What Is Voice-Over?']}
+
+Types of Voice-Over
+    Commercial Voice-Over 
+        ${courseContent['Types of Voice-Over']['Commercial Voice-Over']}
+                
+    Narration Voice-Over
+    ${courseContent['Types of Voice-Over']['Narration Voice-Over']}
+    
+    Character Voice-Over
+    ${courseContent['Types of Voice-Over']['Character Voice-Over']}
+    
+    Dubbing Voice-Over
+    ${courseContent['Types of Voice-Over']['Dubbing Voice-Over']}
+
+    Automated Voice-Over
+    ${courseContent['Types of Voice-Over']['Automated Voice-Over']}
+
+Voice-Over Basics
+    To excel in voice-over work, consider these fundamental principles
+        Clarity and Diction
+        ${courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Clarity and Diction']}
+        
+        Tone and Emotion
+        ${courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Tone and Emotion']}
+
+        Timing and Pacing
+        ${courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Timing and Pacing']}
+
+        Script Interpretation
+        ${courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Script Interpretation']}
+
+Have fun! If you get stuck, we will be happy to help at Storyshell.io
+`;
+
+console.log(transcript);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+        <audio controls>
+            <source src="/public/understanding-voiceover-basics.mp3" type="audio/mpeg">
+        </audio>    
+		<main>
+            <h1>{chapterTitle}</h1>
+			<p>
+				<h3>Introduction to the fundamentals of voice-over work, including its purpose and applications.</h3>
+			</p>
+            <p>{courseContent['Introduction']}</p>
+            <p>
+                <h4>What Is Voice-Over?</h4>
+                {courseContent['What Is Voice-Over?']}
+                <h4>Types of Voice-Over</h4>
+            <ul>
+                <li><h5>Commercial Voice-Over</h5>{courseContent['Types of Voice-Over']['Commercial Voice-Over']}</li>
+                <li><h5>Narration Voice-Over</h5>{courseContent['Types of Voice-Over']['Narration Voice-Over']}</li>
+                <li><h5>Character Voice-Over</h5>{courseContent['Types of Voice-Over']['Character Voice-Over']}</li>
+                <li><h5>Dubbing Voice-Over</h5>{courseContent['Types of Voice-Over']['Dubbing Voice-Over']}</li>
+                <li><h5>Automated Voice-Over</h5>{courseContent['Types of Voice-Over']['Automated Voice-Over']}</li>
+            </ul>
+                <h4>Voice-Over Basics</h4>
+                To excel in voice-over work, consider these fundamental principles
+            <ul>
+                <li><h5>Clarity and Diction</h5>{courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Clarity and Diction']}</li>
+                <li><h5>Tone and Emotion</h5>{courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Tone and Emotion']}</li>
+                <li><h5>Timing and Pacing</h5>{courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Timing and Pacing']}</li>
+                <li><h5>Script Interpretation</h5>{courseContent['Voice-Over Basics']['To excel in voice-over work, consider these fundamental principles']['Script Interpretation']}</li>
+            </ul>
+			</p>
+		</main>
+		<Footer />
+	</body>
+    <style>
+        audio {
+            position: fixed; bottom: 0; width: 100%; margin: 0; padding: 0;
+        }
+    </style>
+</html>
