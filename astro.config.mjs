@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://stoyan-scava.github.io',
+	base: '/voice-over-101-introduction',
 	integrations: [mdx(), sitemap()],
 });
