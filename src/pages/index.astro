@@ -58,13 +58,14 @@ console.log(transcript);
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<iframe src="https://www.youtube.com/embed/ADB6qol6kmM?si=gwz41d_bISD_uey2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		<main>
-			<h1>{SITE_TITLE}</h1>
+			<div class="video-container">
+				<iframe src="https://www.youtube.com/embed/ADB6qol6kmM?si=gwz41d_bISD_uey2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>	
+			<h4>This course will focus on developing the 💪<span class="em">skills</span> and 🎓<span class="em">knowledge</span> necessary for performing <span class="em">voice-over</span> work.</h4>
 			<p>
-				<h4>{SITE_DESCRIPTION}</h4>
 			<ul>
-				<li><h5><a href='/voice-over-101-introduction/understanding-voiceover-basics'>Understanding Voice-Over Basics</a></h5> Introduction to the fundamentals of voice-over work, including its purpose and applications.</li>
+				<li><a href='/voice-over-101-introduction/understanding-voiceover-basics'><h5>Understanding Voice-Over Basics</h5> Introduction to the fundamentals of voice-over work, including its purpose and applications.</a></li>
 				<li><h5>Exploring Voice Varieties</h5> Get familiar with different voice styles, tones, and pitches commonly used in voice-over work.</li>
 				<li><h5>Script Interpretation</h5> How to analyze and interpret voice-over scripts, including understanding the target audience and the intended message.</li>
 				<li><h5>Characterization</h5> Explore techniques for creating different characters, personas, and voices.</li>
@@ -79,8 +80,47 @@ console.log(transcript);
 		<Footer />
 	</body>
 	<style is:global>
-        iframe {
-            position: fixed; right: 0; bottom: 0; margin: 0; padding: 0; width: 35rem; height: 20rem;
-        }
+		.video-container {
+			position: relative;
+			margin: auto;
+  			padding-bottom: 56.25%; /* 16:9 */
+  			height: 0;
+			padding-top: 2%;
+		}
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+  			height: 100%;
+		}
+		h4 {
+			color: rgb(var(--black));
+			font-size: 3vw;
+			padding: 4% 10%;
+
+			.em {
+				color: var(--primary);
+			}
+		}
+		p {
+			padding-top: 2vw;
+			padding-bottom: 2vw;
+		}
+		ul {
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: space-around;
+			text-align: center;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+			padding: 2vw 20px; /* fixed vertical padding to 0 from 20px */
+			background-color: transparent; /* Added for continuity with your design */
+		}
+		a {
+			padding: 2%; 
+		}
     </style>
 </html>
